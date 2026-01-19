@@ -1,0 +1,53 @@
+{
+  "name": "housewire-quality-gates",
+  "version": "1.0.0",
+  "description": "Quality gates and visual regression automation for houswire.com",
+  "main": "index.js",
+  "scripts": {
+    "vr:init": "backstop reference --config=backstop/backstop.config.js",
+    "vr:test": "backstop test --config=backstop/backstop.config.js",
+    "vr:approve": "backstop approve --config=backstop/backstop.config.js",
+    "pw:test": "playwright test",
+    "pw:ui": "playwright test --ui",
+    "pw:report": "playwright show-report",
+    "pw:trace": "playwright show-trace reports/trace.zip",
+    "allure:generate": "allure generate allure-results --clean -o allure-report",
+    "allure:open": "allure open allure-report",
+    "allure:serve": "allure serve allure-results",
+    "test": "playwright test",
+    "test:e2e": "playwright test tests/e2e",
+    "test:visual": "playwright test tests/visual",
+    "test:headed": "playwright test --headed",
+    "test:debug": "playwright test --debug",
+    "lint": "eslint src tests",
+    "format": "prettier --write \"src/**/*.ts\" \"tests/**/*.ts\"",
+    "format:check": "prettier --check \"src/**/*.ts\" \"tests/**/*.ts\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anapotter/housewire-quality-gates.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/anapotter/housewire-quality-gates/issues"
+  },
+  "homepage": "https://github.com/anapotter/housewire-quality-gates#readme",
+  "devDependencies": {
+    "@faker-js/faker": "^10.2.0",
+    "@playwright/test": "^1.57.0",
+    "allure-commandline": "^2.36.0",
+    "allure-playwright": "^3.4.5",
+    "backstopjs": "^6.3.25",
+    "dotenv": "^17.2.3",
+    "eslint": "^9.39.2",
+    "pixelmatch": "^7.1.0",
+    "playwright": "^1.57.0",
+    "pngjs": "^7.0.0",
+    "prettier": "^3.8.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  }
+}
